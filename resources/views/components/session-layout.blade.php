@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 @vite('resources/css/app.css')
 
-<body style="font-family: Open Sans, sans-serif" class="w-full h-screen flex justify-between">
+<body class="w-full h-screen flex justify-between">
     <div>
         <header class="bg-yellow w-[52.25] h-[4rem]">
             <x-svg.coronatime/>
