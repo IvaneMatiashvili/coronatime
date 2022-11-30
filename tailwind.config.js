@@ -10,6 +10,7 @@ module.exports = {
               'dark-100': '#010414',
               'dark-60': '#808189',
               'dark-20': '#E6E6E7',
+              'dark-4': '#F6F6F7',
               'blue-border': '#2029F3',
               'green-button': '#0FBA68',
               'green-box': '#249E2C',
