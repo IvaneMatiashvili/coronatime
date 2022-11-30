@@ -14,22 +14,20 @@ class GetStatisticsData extends Command
 
 	public function handle(): void
 	{
-		$responseCountries = Http::get('https://devtest.ge/countries');
+		$responseCountries = Http::get('https://devtest.ge/countries')->json();
 
-		$jsonDataCountries = $responseCountries->json();
-		foreach ($jsonDataCountries as $Value)
+		foreach ($responseCountries as $value)
 		{
 			$responseCountryStatistics = Http::post('https://devtest.ge/get-country-statistics', [
-				'code' => $Value['code'],
-			]);
-			$jsonDataCountryStatistics = $responseCountryStatistics->json();
+				'code' => $value['code'],
+			])->json();
 
 			Statistic::updateOrCreate([
-				'country'   => $jsonDataCountryStatistics['country'],
-				'confirmed' => $jsonDataCountryStatistics['confirmed'],
-				'recovered' => $jsonDataCountryStatistics['recovered'],
-				'critical'  => $jsonDataCountryStatistics['critical'],
-				'deaths'    => $jsonDataCountryStatistics['deaths'],
+				'country'   => $responseCountryStatistics['country'],
+				'confirmed' => $responseCountryStatistics['confirmed'],
+				'recovered' => $responseCountryStatistics['recovered'],
+				'critical'  => $responseCountryStatistics['critical'],
+				'deaths'    => $responseCountryStatistics['deaths'],
 			]);
 		}
 	}
