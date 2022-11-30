@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//registration
 Route::view('/register', 'session.register')->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/user/verify/{token}', [RegisterController::class, 'verifyEmail'])->name('user.verify');
+
 Route::view('/login', 'session.login')->name('login');
