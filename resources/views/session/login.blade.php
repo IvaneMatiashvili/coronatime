@@ -29,7 +29,7 @@
                     />
                     <span class="flex justify-between w-full">
                         <span class="text-dark-100 ml-[0.5rem] font-semibold font-[0.875rem] cursor-pointer">Remember this device</span>
-                        <a class="text-blue-border font-semibold font-[0.875rem] cursor-pointer" href="#">Forgot password?</a>
+                        <a class="text-blue-border font-semibold font-[0.875rem] cursor-pointer" href="{{ route('forget.password.get') }}">Forgot password?</a>
                     </span>
                 </label>
             </div>
