@@ -56,7 +56,7 @@
             <x-flex.row class="w-full mt-[1.5rem]">
                 <p class="text-dark-60 text-base font-normal">
                     Already have an account?
-                    <a href="#" class="text-base text-dark-100 font-bold">
+                    <a href="{{ route('login') }}" class="text-base text-dark-100 font-bold">
                         Log in
                     </a>
                 </p>

@@ -7,7 +7,7 @@
 <body class="w-full h-screen flex justify-between">
     <div>
         <header class="bg-yellow w-[52.25] h-[4rem]">
-            <x-svg.coronatime/>
+            <x-svg.coronatime class="ml-[9.25rem] mt-[2.5rem]"/>
         </header>
         <div class="w-full h-[45.75rem] flex justify-start items-start">
              {{ $slot }}
