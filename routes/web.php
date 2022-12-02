@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'dashboard.index')->name('dashboard');
-Route::get('/countries', [DashboardPageController::class, 'showStatistics'])->name('dashboard.countries');
+//dashboard
+Route::get('/', [DashboardPageController::class, 'index'])->name('dashboard');
+Route::get('/country-statistics', [DashboardPageController::class, 'showCountriesStatistics'])->name('dashboard.country-statistics');
 
 //registration
 Route::view('/register', 'session.register')->name('register');
