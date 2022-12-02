@@ -17,7 +17,6 @@ class Statistic extends Model
 			$filters['search'] ?? false,
 			fn ($query, $search) => $query
 				->where('country', 'LIKE', "%{$search}%")
-				->where('country', '!=', 'Worldwide')
 		);
 		foreach ($filters as $kay => $param)
 		{
@@ -41,10 +40,5 @@ class Statistic extends Model
 				}
 			);
 		}
-		$query->when(
-			!$filters,
-			fn ($query) => $query
-				->where('country', '!=', 'Worldwide')
-		);
 	}
 }
