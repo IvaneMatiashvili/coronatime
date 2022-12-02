@@ -30,5 +30,12 @@ class GetStatisticsData extends Command
 				'deaths'    => $responseCountryStatistics['deaths'],
 			]);
 		}
+		Statistic::updateOrCreate([
+			'country'   => 'Worldwide',
+			'confirmed' => Statistic::sum('confirmed'),
+			'recovered' => Statistic::sum('recovered'),
+			'critical'  => Statistic::sum('critical'),
+			'deaths'    => Statistic::sum('deaths'),
+		]);
 	}
 }
