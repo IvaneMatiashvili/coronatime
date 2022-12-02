@@ -40,13 +40,13 @@
         </x-flex.row>
     </div>
     <div class="w-[76.5rem] h-[28rem] ml-[9.25rem] overflow-y-scroll overflow-x-hidden border-b border-dark-4 border-x scrollbar">
-        @if(!request()->query())
+        @if(!request()->query('search'))
             <div class="w-[76.5rem] bg-white h-[3.5rem] border-b border-dark-4">
                 <x-flex.row class="ml-[2.5rem] h-full w-[48.125rem] justify-between">
-                    <x-statistics-content info="{{ $worldwide->country }}"/>
-                    <x-statistics-content info="{{ number_format((float)$worldwide->confirmed) }}"/>
-                    <x-statistics-content info="{{ number_format((float)$worldwide->deaths) }}"/>
-                    <x-statistics-content info="{{ number_format((float)$worldwide->recovered) }}"/>
+                    <x-statistics-content info="{{ $worldwide['name'] }}"/>
+                    <x-statistics-content info="{{ number_format((float)$worldwide['confirmed']) }}"/>
+                    <x-statistics-content info="{{ number_format((float)$worldwide['deaths']) }}"/>
+                    <x-statistics-content info="{{ number_format((float)$worldwide['recovered']) }}"/>
                 </x-flex.row>
             </div>
         @endif
