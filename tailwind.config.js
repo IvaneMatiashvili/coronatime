@@ -18,6 +18,7 @@ module.exports = {
               'green-recovered': '#0FBA68',
               'blue-cases': '#2029F3',
               'yellow-death': '#EAD621',
+            'error': '#CC1E1E',
           },
         backgroundImage: {
             'blue-bg': "url('/public/images/new-cases.png')",
