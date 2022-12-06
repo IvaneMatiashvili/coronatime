@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Throwable;
 
 class ForgotPasswordController extends Controller
 {
@@ -39,6 +40,18 @@ class ForgotPasswordController extends Controller
 
 	  public function showResetPasswordForm($token)
 	  {
+	  	try
+	  	{
+	  		$email = DB::table('password_resets')
+	  			  ->where([
+	  			  	'token' => $token,
+	  			  ])
+	  			  ->first()->email;
+	  	}
+	  	catch(Throwable $e)
+	  	{
+	  		abort(404);
+	  	}
 	  	return view('password-reset.index', ['token' => $token]);
 	  }
 
@@ -51,10 +64,10 @@ class ForgotPasswordController extends Controller
 	  						  ->first();
 
 	  	$email = DB::table('password_resets')
-	  						  ->where([
-	  						  	'token' => $request->token,
-	  						  ])
-	  						  ->first()->email;
+	  		  ->where([
+	  		  	'token' => $request->token,
+	  		  ])
+	  		  ->first()->email;
 
 	  	$user = User::where('email', $email)
 	  				  ->update(['password' => Hash::make($request->password)]);

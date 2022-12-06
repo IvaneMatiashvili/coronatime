@@ -30,7 +30,7 @@ return [
 		'string'  => 'The :attribute must be between :min and :max characters.',
 	],
 	'boolean'           => 'The :attribute field must be true or false.',
-	'confirmed'         => 'The :attribute confirmation does not match.',
+	'confirmed'         => ':attributeს ველები არ ემთხვევა ერთმანეთს',
 	'current_password'  => 'The password is incorrect.',
 	'date'              => 'The :attribute is not a valid date.',
 	'date_equals'       => 'The :attribute must be a date equal to :date.',
@@ -44,7 +44,7 @@ return [
 	'distinct'          => 'The :attribute field has a duplicate value.',
 	'doesnt_end_with'   => 'The :attribute may not end with one of the following: :values.',
 	'doesnt_start_with' => 'The :attribute may not start with one of the following: :values.',
-	'email'             => 'The :attribute must be a valid email address.',
+	'email'             => ':attribute უნდა იყოს ვალიდური',
 	'ends_with'         => 'The :attribute must end with one of the following: :values.',
 	'enum'              => 'The selected :attribute is invalid.',
 	'exists'            => 'The selected :attribute is invalid.',
@@ -62,7 +62,7 @@ return [
 		'numeric' => 'The :attribute must be greater than or equal to :value.',
 		'string'  => 'The :attribute must be greater than or equal to :value characters.',
 	],
-	'image'    => 'The :attribute must be an image.',
+	'image'    => 'ფაილი უნდა იყოს სურათის ტიპის',
 	'in'       => 'The selected :attribute is invalid.',
 	'in_array' => 'The :attribute field does not exist in :other.',
 	'integer'  => 'The :attribute must be an integer.',
@@ -87,7 +87,7 @@ return [
 		'array'   => 'The :attribute must not have more than :max items.',
 		'file'    => 'The :attribute must not be greater than :max kilobytes.',
 		'numeric' => 'The :attribute must not be greater than :max.',
-		'string'  => 'The :attribute must not be greater than :max characters.',
+		'string'  => ':attribute სიგრძე არ უნდა იყოს :max-ზე სიმბოლოზე მეტი',
 	],
 	'max_digits' => 'The :attribute must not have more than :max digits.',
 	'mimes'      => 'The :attribute must be a file of type: :values.',
@@ -96,7 +96,7 @@ return [
 		'array'   => 'The :attribute must have at least :min items.',
 		'file'    => 'The :attribute must be at least :min kilobytes.',
 		'numeric' => 'The :attribute must be at least :min.',
-		'string'  => 'The :attribute must be at least :min characters.',
+		'string'  => ':attribute უნდა შედგებოდეს მინიმუმ :min სიმბოლოსგან',
 	],
 	'min_digits'  => 'The :attribute must have at least :min digits.',
 	'multiple_of' => 'The :attribute must be a multiple of :value.',
@@ -116,7 +116,7 @@ return [
 	'prohibited_unless'    => 'The :attribute field is prohibited unless :other is in :values.',
 	'prohibits'            => 'The :attribute field prohibits :other from being present.',
 	'regex'                => 'The :attribute format is invalid.',
-	'required'             => 'The :attribute field is required.',
+	'required'             => 'გთხოვთ შეავსოთ :attributeს ველი',
 	'required_array_keys'  => 'The :attribute field must contain entries for: :values.',
 	'required_if'          => 'The :attribute field is required when :other is :value.',
 	'required_if_accepted' => 'The :attribute field is required when :other is accepted.',
@@ -135,7 +135,7 @@ return [
 	'starts_with' => 'The :attribute must start with one of the following: :values.',
 	'string'      => 'The :attribute must be a string.',
 	'timezone'    => 'The :attribute must be a valid timezone.',
-	'unique'      => 'The :attribute has already been taken.',
+	'unique'      => 'აღნიშნული :attribute უკვე არსებობს ბაზაში',
 	'uploaded'    => 'The :attribute failed to upload.',
 	'url'         => 'The :attribute must be a valid URL.',
 	'uuid'        => 'The :attribute must be a valid UUID.',
@@ -155,11 +155,11 @@ return [
 		'attribute-name' => [
 			'rule-name' => 'custom-message',
 		],
-		'password' => [
-			'password_does_not_exist' => 'your provided password could not be verified',
-		],
 		'name' => [
-			'username_does_not_exist' => 'your provided username could not be verified',
+			'username_does_not_exist' => 'აღნიშნული მეტსახელის მქონე მომხმარებელი ვერ მოიძებნა.',
+		],
+		'password' => [
+			'password_does_not_exist' => 'პაროლი არასწორია',
 		],
 	],
 
@@ -174,5 +174,9 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	'attributes' => [
+		'name'             => 'მომხმარებელის სახელი',
+		'password'         => 'პაროლი',
+		'email'            => 'ელ-ფოსტა',
+	],
 ];

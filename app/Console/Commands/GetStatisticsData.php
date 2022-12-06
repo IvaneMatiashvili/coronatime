@@ -23,7 +23,10 @@ class GetStatisticsData extends Command
 			])->json();
 
 			Statistic::updateOrCreate([
-				'country'   => $responseCountryStatistics['country'],
+				'country'     => [
+					'en' => $value['name']['en'],
+					'ka' => $value['name']['ka'],
+				],
 				'confirmed' => $responseCountryStatistics['confirmed'],
 				'recovered' => $responseCountryStatistics['recovered'],
 				'critical'  => $responseCountryStatistics['critical'],

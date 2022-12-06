@@ -1,63 +1,53 @@
 <x-session-layout>
-    <x-panel title="Welcome to Coronatime" message="Please enter required info to sign up">
+    <x-panel title="{{ __('content.welcome-to-coronatime') }}" message="{{ __('content.please-enter-registration-info') }}">
         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" class="w-full h-full">
             @csrf
 
             <div class="w-full mt-[1.5rem]">
 
-                <x-form.label name="name" title="Username"/>
+                <x-form.label name="name" title="{{ __('content.username') }}"/>
 
                 <div class="mt-1">
-                    <x-form.input name="name" type="text" placeholder="Enter unique username"/>
-                    <x-form.error name="name" class="mt-2"/>
+                    <x-form.input name="name" type="text" placeholder="{{ __('content.enter-username') }}"/>
+                    <x-form.error name="name"/>
                 </div>
             </div>
-            <div class="mt-[2rem] w-full">
+            <div class="mt-[1rem] w-full">
 
-                <x-form.label name="email" title="Email"/>
+                <x-form.label name="email" title="{{ __('content.email') }}"/>
 
                 <div class="mt-1">
-                    <x-form.input name="email" class="h-12" type="email" placeholder="Enter your email"/>
-                    <x-form.error name="email" class="mt-2"/>
+                    <x-form.input name="email" type="email" placeholder="{{ __('content.enter-email') }}"/>
+                    <x-form.error name="email"/>
                 </div>
             </div>
-            <div class="mt-[2rem] w-full">
+            <div class="mt-[1rem] w-full">
 
-                <x-form.label name="password" title="Password"/>
+                <x-form.label name="password" title="{{ __('content.password') }}"/>
 
                 <div class="mt-1">
-                    <x-form.input name="password" type="password" class="h-12" placeholder="Fill in password"/>
-                    <x-form.error name="password" class="mt-2"/>
+                    <x-form.input name="password" type="password" placeholder="{{ __('content.enter-password') }}"/>
+                    <x-form.error name="password"/>
                 </div>
             </div>
-            <div class="mt-[2rem] w-full">
+            <div class="mt-[1rem] w-full">
 
-                <x-form.label name="password_confirmation" title="Repeat password"/>
+                <x-form.label name="password_confirmation" title="{{ __('content.repeat-password') }}"/>
 
                 <div class="mt-1">
-                    <x-form.input name="password_confirmation" type="password" class="h-12" placeholder="Repeat password"/>
-                    <x-form.error name="password_confirmation" class="mt-2"/>
+                    <x-form.input name="password_confirmation" type="password" placeholder="{{ __('content.repeat-password') }}"/>
+                    <x-form.error name="password_confirmation"/>
                 </div>
-            </div>
-
-            <div class="flex items-center mt-[1.563rem]">
-                <label class="flex items-center">
-                    <input
-                            type="checkbox"
-                            class="bg-white border-dark-20 rounded-sm outline-none w-[1.25rem] h-[1.25rem] text-green-box cursor-pointer focus:ring-0"
-                    />
-                     <span class="ml-[0.5rem] text-dark-100 font-semibold font-[0.875rem] cursor-pointer">Remember this device</span>
-                </label>
             </div>
 
             <x-flex.row class="justify-between w-full">
-                <x-form.button title="SIGN UP"/>
+                <x-form.button title="{{ __('content.sign-up') }}"/>
             </x-flex.row>
             <x-flex.row class="w-full mt-[1.5rem]">
                 <p class="text-dark-60 text-base font-normal">
-                    Already have an account?
+                    {{ __('content.have-account') }}
                     <a href="{{ route('login') }}" class="text-base text-dark-100 font-bold">
-                        Log in
+                        {{ __('content.login') }}
                     </a>
                 </p>
             </x-flex.row>

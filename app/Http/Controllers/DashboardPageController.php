@@ -9,7 +9,7 @@ class DashboardPageController extends Controller
 	public function index()
 	{
 		$worldwide = [
-			'name'                     => 'Worldwide',
+			'name'                     => __('content.worldwide'),
 			'confirmed'                => Statistic::sum('confirmed'),
 			'recovered'                => Statistic::sum('recovered'),
 			'critical'                 => Statistic::sum('critical'),
@@ -27,7 +27,7 @@ class DashboardPageController extends Controller
 	public function showCountriesStatistics()
 	{
 		$worldwide = [
-			'name'                     => 'Worldwide',
+			'name'                     => __('content.worldwide'),
 			'confirmed'                => Statistic::sum('confirmed'),
 			'recovered'                => Statistic::sum('recovered'),
 			'critical'                 => Statistic::sum('critical'),
