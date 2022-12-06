@@ -6,7 +6,7 @@
     </p>
     @if(request()->query($name) && request()->query($name) === 'asc' )
 
-        <x-flex.col class="justify-start h-[0.6rem] w-[6rem]">
+        <x-flex.col class="justify-start h-[0.6rem]">
 
             <a href="{{ $route_asc }}" class="w-0 h-0
                           border-l-[5px] border-l-transparent
