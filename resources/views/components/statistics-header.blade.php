@@ -1,13 +1,12 @@
 @props(['name','title', 'route_asc', 'route_desc'])
 
-
-<x-flex.row class="h-full w-[6rem] justify-evenly">
-    <p class="text-[0.875rem] font-semibold text-dark-100 w-[6rem]">
+<div class="h-full w-[10rem] flex items-center justify-start">
+    <p class="text-[0.875rem] font-semibold text-dark-100 mr-2">
         {{ $title }}
     </p>
-    @if(request()->query($name) && request()->query($name) === 'asc')
+    @if(request()->query($name) && request()->query($name) === 'asc' )
 
-        <x-flex.col class="justify-start h-[0.6rem]">
+        <x-flex.col class="justify-start h-[0.6rem] w-[6rem]">
 
             <a href="{{ $route_asc }}" class="w-0 h-0
                           border-l-[5px] border-l-transparent
@@ -54,4 +53,4 @@
         </x-flex.col>
 
     @endif
-</x-flex.row>
+</div>

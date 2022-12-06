@@ -1,5 +1,8 @@
 @props(['name'])
 
 @error($name)
-    <p {{ $attributes->merge(['class' => 'text-red-400 italic absolute text-xs']) }}>{{ $message }}</p>
+<div class="flex justify-start items-center">
+    <x-svg.error-svg/>
+    <p {{ $attributes->merge(['class' => 'text-error font-normal  absolute left-44 text-[14px]']) }}>{{ $message }}</p>
+</div>
 @enderror
