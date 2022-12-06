@@ -7,7 +7,7 @@ return [
 	'deaths'                                                    => 'Deaths',
 	'recovered'                                                 => 'Recovered',
 	'by-country'                                                => 'By country',
-	'search-by-country'                                         => 'search by country',
+	'search-by-country'                                         => 'Search by country',
 	'logout'                                                    => 'Log out',
 	'statistic-by-country'                                      => 'Statistics by country',
 	'worldwide-statistic'                                       => 'Worldwide statistic',

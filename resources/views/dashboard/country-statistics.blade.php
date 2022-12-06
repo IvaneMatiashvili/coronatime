@@ -12,10 +12,10 @@
                 @elseif(request()->query('recovered'))
                     <input type="hidden" name="recovered" value="{{ request()->query('recovered') }}">
                 @endif
-        <div class="flex flex-row-reverse border border-dark-20 w-[15rem] h-[3rem] items-center justify-center ml-[9.25rem] rounded-lg mt-[3.438rem]">
-            <input type="text" name="search" placeholder="{{ __('content.search-by-country') }} "
-                   value="{{ old('search') }}"
-                   class="placeholder-dark-60 ring-offset-0 placeholder-4 placeholder-dark text-dark-100 h-[2.5rem] outline-none w-[10rem] border-transparent focus:border-transparent focus:shadow-transparent focus:ring-offset-0"/>
+        <div class="flex flex-row-reverse border border-dark-20 w-[18rem] h-[3rem] items-center justify-center ml-[9.25rem] rounded-lg mt-[3.438rem]">
+            <input type="search" name="search"  placeholder="{{ __('content.search-by-country') }} "
+                   value="{{ request()->query('search') }}"
+                   class="placeholder-dark-60 ring-offset-0 placeholder-4 placeholder-dark text-dark-100 h-[2.5rem] outline-none w-[12rem] border-transparent focus:border-transparent focus:shadow-transparent focus:ring-offset-0"/>
             <button type="submit">
                 <x-svg.search/>
             </button>
