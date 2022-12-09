@@ -34,16 +34,9 @@ class RegisterController extends Controller
 		if (isset($verifiedUser))
 		{
 			$user = $verifiedUser->user;
-			if (!$user->email_verified_at)
-			{
-				$user->email_verified_at = Carbon::now();
-				$user->save();
-				return view('feedback.confirmed')->with('success', 'Email verified');
-			}
-			else
-			{
-				return view('feedback.confirmed')->with('success', 'Email verified');
-			}
+			$user->email_verified_at = Carbon::now();
+			$user->save();
+			return view('feedback.confirmed')->with('success', 'Email verified');
 		}
 		else
 		{
