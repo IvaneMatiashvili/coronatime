@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
 
 	/**
 	 * Define your route model bindings, pattern filters, and other route configuration.
-	 *
+	 RouteServiceProvider::HOME*
 	 * @return void
 	 */
 	public function boot()

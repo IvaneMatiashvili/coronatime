@@ -24,25 +24,25 @@ Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang
 Route::middleware(['auth', 'setLocale'])->group(function () {
 	Route::get('/', [DashboardPageController::class, 'index'])->name('dashboard');
 	Route::get('/country-statistics', [DashboardPageController::class, 'showCountriesStatistics'])->name('dashboard.country-statistics');
-	Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+	Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 //registration
 Route::middleware(['guest', 'setLocale'])->group(function () {
 	Route::view('/register', 'session.register')->name('register');
-	Route::post('/register', [RegisterController::class, 'store']);
+	Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 	Route::get('/user/verify/{token}', [RegisterController::class, 'verifyEmail'])->name('user.verify');
 });
 
 //login
 Route::middleware(['guest', 'setLocale'])->group(function () {
 	Route::view('/login', 'session.login')->name('login');
-	Route::post('/login', [LoginController::class, 'login']);
+	Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 });
 
 //reset password
-Route::middleware('setLocale')->group(function () {
-	Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::middleware(['guest', 'setLocale'])->group(function () {
+	Route::view('forget-password', 'password-reset.forget-password')->name('forget.password.get');
 	Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
 	Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 	Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');

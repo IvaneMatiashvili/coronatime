@@ -11,7 +11,7 @@ class StoreRegistrationRequest extends FormRequest
 	{
 		return [
 			'name'     => ['required', 'min:3', Rule::unique('users', 'name')],
-			'email'    => ['email', Rule::unique('users', 'email')],
+			'email'    => ['required', 'email', Rule::unique('users', 'email')],
 			'password' => 'required|confirmed|min:3',
 		];
 	}
