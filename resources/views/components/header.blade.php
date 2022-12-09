@@ -32,7 +32,7 @@
             {{ $username }}
         </p>
         <span class="border border-dark-20 h-[2rem] mr-4"></span>
-        <form method="post" action="{{ route('logout') }}">
+        <form method="get" action="{{ route('logout') }}">
             @csrf
             <button type="submit" class="hover:overline font-medium text-dark-100 text-[0.875rem] cursor-pointer">
                 {{ __('content.logout') }}

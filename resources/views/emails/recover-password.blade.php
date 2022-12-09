@@ -3,7 +3,7 @@
     <div class="content-container">
         <p class="confirmation">{{ __('content.recover-password') }}</p>
         <p class="info">{{ __('content.click-btn-recover') }}</p>
-        <a href="{{ route('reset.password.get', $token) }}">
+        <a href="{{ route('reset.password.get', $user->token) }}">
            {{ __('content.recover-password') }}
         </a>
     </div>
