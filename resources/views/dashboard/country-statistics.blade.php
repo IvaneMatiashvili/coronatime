@@ -12,18 +12,18 @@
                 @elseif(request()->query('recovered'))
                     <input type="hidden" name="recovered" value="{{ request()->query('recovered') }}">
                 @endif
-        <div class="flex flex-row-reverse border border-dark-20 w-[18rem] h-[3rem] items-center justify-center ml-[9.25rem] rounded-lg mt-[3.438rem]">
-            <input type="search" name="search"  placeholder="{{ __('content.search-by-country') }} "
+        <div class="flex flex-row-reverse border border-dark-20 w-[18rem] h-[3rem] items-center justify-center sm:ml-[9.25rem] ml-4 rounded-lg mt-[3.438rem]">
+            <input type="search" name="search"  placeholder="{{ __('content.search-by-country') }}"
                    value="{{ request()->query('search') }}"
-                   class="placeholder-dark-60 ring-offset-0 placeholder-4 placeholder-dark text-dark-100 h-[2.5rem] outline-none w-[12rem] border-transparent focus:border-transparent focus:shadow-transparent focus:ring-offset-0"/>
+                   class="placeholder-dark-60 ring-offset-0 placeholder-4 placeholder-dark font-inter text-dark-100 h-[2.5rem] outline-none w-[12rem] border-transparent focus:border-transparent focus:shadow-transparent focus:ring-offset-0"/>
             <button type="submit">
                 <x-svg.search/>
             </button>
         </div>
     </form>
 
-    <div class="w-[76.5rem] bg-dark-4 h-[3.5rem] ml-[9.25rem] mt-[2.5rem] rounded-t-lg">
-        <x-flex.row class="ml-[2.5rem] h-full w-[60rem] justify-between">
+    <div class="sm:w-[76.5rem] w-[23rem] bg-dark-4 h-[3.5rem] sm:ml-[9.25rem] ml-4 mt-[2.5rem] rounded-t-lg">
+        <x-flex.row class="sm:ml-[2.5rem] break-all ml-0 h-full sm:w-[60rem] w-[23rem] justify-between">
             @if(request()->query('country') === 'asc')
                 <x-statistics-header name="country" title="{{ __('content.location') }}"
                                      route_asc="{!! route('dashboard.country-statistics',['country=desc', 'search' => request('search')]) !!}"
@@ -78,24 +78,24 @@
             @endif
         </x-flex.row>
     </div>
-    <div class="w-[76.5rem] h-[28rem] ml-[9.25rem] overflow-y-scroll overflow-x-hidden border-b border-dark-4 border-x scrollbar">
+    <div class="sm:w-[76.5rem] w-[23rem] sm:h-[28rem] h-[20rem] sm:ml-[9.25rem] ml-4 overflow-y-scroll overflow-x-hidden border-b border-dark-4 border-x scrollbar">
         @if(!request()->query('search'))
-            <div class="w-[76.5rem] bg-white h-[3.5rem] border-b border-dark-4">
-                <x-flex.row class="ml-[2.5rem] h-full w-[60rem] justify-between">
-                    <x-statistics-content info="{{ $worldwide['name'] }}"/>
-                    <x-statistics-content info="{{ number_format((float)$worldwide['confirmed']) }}"/>
-                    <x-statistics-content info="{{ number_format((float)$worldwide['deaths']) }}"/>
+            <div class="sm:w-[76.5rem] w-[23rem] bg-white h-[3.5rem] border-b border-dark-4">
+                <x-flex.row class="sm:ml-[2.5rem] ml-0 h-full sm:w-[60rem] w-[23rem] justify-between">
+                    <x-statistics-content info="{{ $worldwide['name'] }}" class="ml-2 sm:ml-0"/>
+                    <x-statistics-content info="{{ number_format((float)$worldwide['confirmed']) }}" class="ml-[0.3rem] sm:ml-0"/>
+                    <x-statistics-content info="{{ number_format((float)$worldwide['deaths']) }}" class="ml-[1.2rem] sm:ml-0"/>
                     <x-statistics-content info="{{ number_format((float)$worldwide['recovered']) }}"/>
                 </x-flex.row>
             </div>
         @endif
 
         @foreach($statistics as $statistic)
-            <div class="w-[76.5rem] bg-white h-[3.5rem] border-b border-dark-4">
-                <x-flex.row class="ml-[2.5rem] h-full w-[60rem] justify-between">
-                    <x-statistics-content info="{{ $statistic->country }}"/>
-                    <x-statistics-content info="{{ number_format((float)$statistic->confirmed) }}"/>
-                    <x-statistics-content info="{{ number_format((float)$statistic->deaths) }}"/>
+            <div class="sm:w-[76.5rem] w-[23rem] bg-white h-[3.5rem] border-b border-dark-4">
+                <x-flex.row class="sm:ml-[2.5rem] ml-0 h-full sm:w-[60rem] w-[23rem] justify-between">
+                    <x-statistics-content info="{{ $statistic->country }}" class="ml-2 sm:ml-0"/>
+                    <x-statistics-content info="{{ number_format((float)$statistic->confirmed) }}" class="ml-[0.3rem] sm:ml-0"/>
+                    <x-statistics-content info="{{ number_format((float)$statistic->deaths) }}" class="ml-[1.2rem] sm:ml-0"/>
                     <x-statistics-content info="{{ number_format((float)$statistic->recovered) }}"/>
                 </x-flex.row>
             </div>
