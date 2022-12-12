@@ -24,7 +24,10 @@ module.exports = {
             'blue-bg': "url('/public/images/new-cases.png')",
             'green-bg': "url('/public/images/recovered.png')",
             'yellow-bg': "url('/public/images/death.png')",
-      }
+      },
+        fontFamily: {
+            inter: ['Inter'],
+      },
     },
   },
   plugins: [
