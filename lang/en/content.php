@@ -47,4 +47,5 @@ return [
 	'email-verification'                                        => 'VERIFY EMAIL',
 	'recover-password'                                          => 'Recover password',
 	'click-btn-recover'                                         => 'click this button to recover a password',
+	'go-back'                                                   => 'Go back',
 ];
