@@ -8,8 +8,14 @@
                 <x-form.label name="name" title="{{ __('content.username') }}"/>
 
                 <div class="mt-1">
-                    <x-form.input name="name" type="text" placeholder="{{ __('content.enter-username-or-email') }}"/>
-                    <x-form.error name="name"/>
+                    <x-flex.row>
+                        <x-form.input name="name" type="text"
+                                      placeholder="{{ __('content.enter-username-or-email') }}"/>
+                        <div class="absolute left-[21.5rem] sm:left-[31rem] hidden mb-[1.25rem]">
+                            <x-svg.approve-svg/>
+                        </div>
+                    </x-flex.row>
+                    <x-form.error name="name" class="name-error" position="44"/>
                 </div>
             </div>
             <div class="mt-[1rem] w-full">
@@ -17,8 +23,14 @@
                 <x-form.label name="password" title="{{ __('content.password') }}"/>
 
                 <div class="mt-1">
-                    <x-form.input name="password" type="password"  placeholder="{{ __('content.enter-password') }}"/>
-                    <x-form.error name="password"/>
+                    <x-flex.row>
+                        <x-form.input name="password" type="password" class="login-password"
+                                      placeholder="{{ __('content.enter-password') }}"/>
+                        <div class="absolute left-[21.5rem] sm:left-[31rem] hidden mb-[1.25rem]">
+                            <x-svg.approve-svg/>
+                        </div>
+                    </x-flex.row>
+                    <x-form.error name="password" class="password-error"  position="44"/>
                 </div>
             </div>
             <div class="flex items-center mt-[1rem] w-full">
@@ -29,8 +41,9 @@
                             name="remember-me"
                     />
                     <span class="flex justify-between w-full">
-                        <span class="text-dark-100 ml-[0.5rem] w-[12rem] font-semibold font-[0.875rem] cursor-pointer">{{ __('content.remember-this-device') }}</span>
-                        <a class="text-blue-border font-semibold font-[0.875rem] cursor-pointer" href="{{ route('forget.password.get') }}">{{ __('content.forgot-password') }}</a>
+                        <span class="text-dark-100 ml-[0.5rem] w-[12rem] font-inter font-semibold font-[0.875rem] cursor-pointer">{{ __('content.remember-this-device') }}</span>
+                        <a class="text-blue-border font-inter font-semibold font-[0.875rem] cursor-pointer"
+                           href="{{ route('forget.password.get') }}">{{ __('content.forgot-password') }}</a>
                     </span>
                 </label>
             </div>
@@ -39,9 +52,9 @@
                 <x-form.button title="{{ __('content.login') }}"/>
             </x-flex.row>
             <x-flex.row class="w-full mt-[1.5rem]">
-                <p class="text-dark-60 text-base font-normal">
+                <p class="text-dark-60 font-inter text-base font-normal">
                     {{ __('content.do-not-have-account') }}
-                    <a href="{{ route('register') }}" class="text-base text-dark-100 font-bold">
+                    <a href="{{ route('register') }}" class="text-base font-inter text-dark-100 font-bold">
                         {{ __('content.register-for-free') }}
                     </a>
                 </p>
@@ -49,7 +62,7 @@
         </form>
         @if (session()->has('info'))
             <x-flex.row class="w-full mt-4">
-                <p class="text-sky-800 text-xl font-bold">
+                <p class="text-sky-800 font-inter text-xl font-bold">
                     {{ session('info') }}
                 </p>
             </x-flex.row>

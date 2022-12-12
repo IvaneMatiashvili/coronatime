@@ -47,4 +47,5 @@ return [
 	'email-verification'                                        => 'ექაუნთის აქტივაცია',
 	'recover-password'                                          => 'პაროლის აღდგენა',
 	'click-btn-recover'                                         => 'დააჭირეთ ღილაკს რომ აღადგინოთ პაროლი',
+	'go-back'                                                   => 'უკან',
 ];

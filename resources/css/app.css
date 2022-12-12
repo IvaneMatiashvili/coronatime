@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    src: url("/public/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+}
+
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 6px;
@@ -19,8 +25,14 @@
     border: 3px solid #808189;
   }
 
+
   input {
-  --tw-ring-shadow: 0 0 #000 !important;
+  --tw-ring-shadow: 1 1 #FFFFFF !important;
 }
+
+
+  input:focus {
+     border-color: #2029F3 !important;
+  }
 
 }

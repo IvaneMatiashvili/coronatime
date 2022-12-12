@@ -1,7 +1,7 @@
 @props(['name','title', 'route_asc', 'route_desc'])
 
-<div class="h-full w-[10rem] flex items-center justify-start">
-    <p class="text-[0.875rem] font-semibold text-dark-100 mr-2">
+<div class="h-full w-[10rem] flex items-center sm:justify-start justify-center">
+    <p class="text-[0.875rem] font-semibold font-inter text-dark-100 mr-2">
         {{ $title }}
     </p>
     @if(request()->query($name) && request()->query($name) === 'asc' )

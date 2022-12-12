@@ -1,4 +1,5 @@
-<x-email-layout>
+
+<x-email-layout fontUrl="{{ $message->embed(public_path().'/images/landing.png') }}">
     <img src="{{ $message->embed(public_path().'/images/landing.png') }}" alt="landing image"/>
     <div class="content-container">
         <p class="confirmation">{{ __('content.recover-password') }}</p>

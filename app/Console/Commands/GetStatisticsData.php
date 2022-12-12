@@ -20,18 +20,37 @@ class GetStatisticsData extends Command
 		{
 			$responseCountryStatistics = Http::post('https://devtest.ge/get-country-statistics', [
 				'code' => $value['code'],
-			])->json();
-
-			Statistic::updateOrCreate([
-				'country'     => [
-					'en' => $value['name']['en'],
-					'ka' => $value['name']['ka'],
-				],
-				'confirmed' => $responseCountryStatistics['confirmed'],
-				'recovered' => $responseCountryStatistics['recovered'],
-				'critical'  => $responseCountryStatistics['critical'],
-				'deaths'    => $responseCountryStatistics['deaths'],
 			]);
+			if (Statistic::select('*')->where('country->en', $value['name']['en'])->exists())
+			{
+				Statistic::where('country->en', $value['name']['en'])->update(
+					['country'     => [
+						'en' => $value['name']['en'],
+						'ka' => $value['name']['ka'],
+					]],
+					[
+						'confirmed' => $responseCountryStatistics['confirmed'],
+						'recovered' => $responseCountryStatistics['recovered'],
+						'critical'  => $responseCountryStatistics['critical'],
+						'deaths'    => $responseCountryStatistics['deaths'],
+					]
+				);
+			}
+			else
+			{
+				Statistic::create(
+					[
+						'country' => [
+							'en' => $value['name']['en'],
+							'ka' => $value['name']['ka'],
+						],
+						'confirmed' => $responseCountryStatistics['confirmed'],
+						'recovered' => $responseCountryStatistics['recovered'],
+						'critical'  => $responseCountryStatistics['critical'],
+						'deaths'    => $responseCountryStatistics['deaths'],
+					]
+				);
+			}
 		}
 	}
 }
