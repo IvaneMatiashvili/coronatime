@@ -1,4 +1,4 @@
-<div class="menu w-screen h-screen absolute hidden flex-col justify-center items-center bg-gradient-to-r from-purple-500 to-pink-500">
+<div class="menu z-50 w-screen h-screen absolute hidden flex-col justify-center items-center bg-gradient-to-r from-purple-500 to-pink-500">
     <P class="go-back flex items-center justify-center w-[10rem] h-[3rem] rounded-3xl mb-8 font-medium text-dark-100 bg-gray-400 text-[0.875rem] cursor-pointer">
         {{ __('content.go-back') }}
     </P>
