@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
-	public function store(StoreRegistrationRequest $request)
+	public function register(StoreRegistrationRequest $request)
 	{
 		$validated = $request->validated();
 

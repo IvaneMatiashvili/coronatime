@@ -8,6 +8,7 @@
  @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/menu.js'])
 
 <body class="w-full h-screen">
+ <div class="on-blur absolute w-screen h-screen bg-transparent hidden"></div>
 <x-menu username="{{ $username }}"/>
 <div>
     <x-header username="{{ $username }}"/>

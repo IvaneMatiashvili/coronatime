@@ -40,7 +40,7 @@
         @font-face {
             font-family: 'Inter';
             font-style: normal;
-            src:  url({{ $message->embed(public_path().'/fonts/Inter-VariableFont_slnt,wght.ttf') }}) format("truetype");
+            src:  url({{ public_path().'/fonts/Inter-VariableFont_slnt,wght.ttf' }}) format("truetype");
         }
         @media (max-width: 600px) {
             a {

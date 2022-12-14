@@ -11,7 +11,7 @@
                 @endif
             </P>
 
-            <x-svg.arrow-svg class="cursor-pointer lang-arrow"/>
+            <x-svg.arrow-svg class="cursor-pointer lang-arrow z-40"/>
             <x-flex.col
                     class="absolute top-[4rem] w-[10rem] justify-start items-start bg-gray-200 lang-container hidden">
                 <x-flex.row class="w-[10rem] h-[1.875rem] border border-dark-60 border-b-0">

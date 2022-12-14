@@ -29,14 +29,14 @@ Route::middleware(['auth', 'setLocale'])->group(function () {
 
 //registration
 Route::middleware(['guest', 'setLocale'])->group(function () {
-	Route::view('/register', 'session.register')->name('register');
-	Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+	Route::view('/register', 'auth.register')->name('register');
+	Route::post('/register', [RegisterController::class, 'register'])->name('register.store');
 	Route::get('/user/verify/{token}', [RegisterController::class, 'verifyEmail'])->name('user.verify');
 });
 
 //login
 Route::middleware(['guest', 'setLocale'])->group(function () {
-	Route::view('/login', 'session.login')->name('login');
+	Route::view('/login', 'auth.login')->name('login');
 	Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 });
 
